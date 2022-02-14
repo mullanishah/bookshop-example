@@ -1,28 +1,42 @@
 package com.core.pojo;
 
+import java.io.Serializable;
 import java.util.Date;
-
 import com.core.utils.CommonUtils;
 
 /**
  * @author Shahrukh
- *
+ * @since 05/02/2022
  */
-public class Book {
+public class Book implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
 	
 	private String bookTitle;
 	private String author;
-	private String genre;
+	//private String genre;
+	private BookGenre genre;
 	private double bookPrice;
 	private Date publishDate;
 	
-	public Book(String bookTitle, String author, String genre, double bookPrice, Date publishDate) {
+	public Book(String bookTitle, String author, BookGenre genre, double bookPrice, Date publishDate) {
 		super();
 		this.bookTitle = bookTitle;
 		this.author = author;
 		this.genre = genre;
 		this.bookPrice = bookPrice;
 		this.publishDate = publishDate;
+	}
+	
+	public Book(String bookTitle) {
+		super();
+		this.bookTitle = bookTitle;
+	}
+
+	public Book(String bookTitle, String author) {
+		super();
+		this.bookTitle = bookTitle;
+		this.author = author;
 	}
 
 	public String getBookTitle() {
@@ -41,11 +55,11 @@ public class Book {
 		this.author = author;
 	}
 
-	public String getGenre() {
+	public BookGenre getGenre() {
 		return genre;
 	}
 
-	public void setGenre(String genre) {
+	public void setGenre(BookGenre genre) {
 		this.genre = genre;
 	}
 
@@ -67,7 +81,7 @@ public class Book {
 
 	@Override
 	public String toString() {
-		return "Book [Title: " + bookTitle + ", Author: " + author + ", Genre: " + genre + ", Price: " + bookPrice
+		return "Book [Title: " + bookTitle + ", Author: " + author + ", Genre: " + CommonUtils.getEnrichedGenre(genre) + ", Price: " + bookPrice
 				+ ", Publish Date: " + CommonUtils.getSimpleDatFormatter().format(publishDate) + "]";
 	}
 
