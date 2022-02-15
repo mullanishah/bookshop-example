@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.Scanner;
 import com.core.operations.IOOperations;
 import com.core.pojo.Book;
+import com.core.utils.CommonUtils;
 import com.core.utils.DataFeedUtils;
 
 /**
@@ -26,6 +27,9 @@ public class BookShoppingTester {
 		ArrayList<Book> bookCart = null;
 		try {
 			bookCart = IOOperations.loadCart();
+			if(bookCart != null) {
+				System.out.println("Existing cart restored successfully !!");
+			}
 		}catch(ClassNotFoundException | IOException e) {
 			System.out.println("Error in generating/loading cart: " + e);
 		}
@@ -69,7 +73,7 @@ public class BookShoppingTester {
 					DisplayBookTester.searchBookOnTitle(availableBooksMap);
 					break;
 				case 9:
-					exit();
+					CommonUtils.exit();
 					break;
 				default:
 					throw new IllegalArgumentException("Unexpected choice selection: " + choice);
@@ -79,11 +83,6 @@ public class BookShoppingTester {
 				e.printStackTrace();
 			}
 		}
-	}
-	
-	private static void exit() {
-		System.out.println("============= EXITING ================");
-		System.exit(0);
 	}
 
 }

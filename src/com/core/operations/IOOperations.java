@@ -46,6 +46,7 @@ public class IOOperations {
 		try(ObjectOutputStream outStream = new ObjectOutputStream(new FileOutputStream("cart.ser"));){
 			outStream.writeObject(cart);
 		} catch (Exception e) {
+			System.err.println("Error while storing cart data !!");
 			e.printStackTrace();
 		}
 		return true;

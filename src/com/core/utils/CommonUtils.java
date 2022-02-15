@@ -26,4 +26,9 @@ public class CommonUtils {
 	public static String getEnrichedGenre(BookGenre genre) {
 		return genre.getValue().toString();
 	}
+	
+	public static void exit() {
+		System.out.println("============= EXITING ================");
+		System.exit(0);
+	}
 }

@@ -47,7 +47,7 @@ public class CollectionOperations {
 		
 		double totalPrice = 0;
 		for(Book book : existingCart) {
-			totalPrice += totalPrice + book.getBookPrice();
+			totalPrice = totalPrice + book.getBookPrice();
 		}
 		existingCart.removeAll(existingCart);
 		return totalPrice;

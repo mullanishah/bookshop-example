@@ -2,10 +2,13 @@ package com.core.tester;
 
 import static com.core.utils.CommonUtils.getEnrichedGenre;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import com.core.operations.CollectionOperations;
+import com.core.operations.IOOperations;
 import com.core.pojo.Book;
+import com.core.utils.CommonUtils;
 import com.core.utils.DataFeedUtils;
 
 /**
@@ -32,14 +35,20 @@ public class CheckoutBookTester {
 		}
 	}
 	
-	public static void saveLaterBooksInCart(ArrayList<Book> bookCart) {
+	public static boolean saveLaterBooksInCart(ArrayList<Book> bookCart) throws IOException {
 		
+		if(IOOperations.saveData(bookCart) == true) {
+			System.out.println("Cart saved for later use! Thank you");
+			CommonUtils.exit();
+		}
+		return false;
 	}
 	
 //	public static void main(String[] args) throws Exception {
 //		ArrayList<Book> cart = new ArrayList<Book>();
 //		for(Book b : DataFeedUtils.getPopulatedData().values()) {
-//			cart.add(b);
+//			if(b.getBookTitle().contains("C"))
+//				cart.add(b);
 //		}
 //		CheckoutBookTester.checkoutBooksFromCart(cart);
 //	}
