@@ -28,7 +28,7 @@ public class DataFeedUtils {
 		bookMap = Optional.ofNullable(bookMap).
 							orElse(new HashMap<String, Book>());
 		for(Book book : getBookArray()) {
-			bookMap.put(book.getBookTitle(), book);
+			bookMap.put(book.getBookTitle().toLowerCase(), book);
 		}
 		return bookMap;
 	}

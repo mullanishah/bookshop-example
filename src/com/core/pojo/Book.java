@@ -87,7 +87,7 @@ public class Book implements Serializable {
 
 	@Override
 	public int hashCode() {
-		
+		System.out.println("hashCode() called");
 		final int prime = 31;
 		int result = 1;
 		//result = prime * result + ((author == null) ? 0 : author.hashCode());
@@ -97,12 +97,18 @@ public class Book implements Serializable {
 
 	@Override
 	public boolean equals(Object obj) {
-		
+		System.out.println("equals() called");
 		if(obj == null || !(obj instanceof Book)) {
 			return false;
+		} 
+		Book book = (Book)obj;
+		if(this.author != null && this.bookTitle != null) {
+			return this.author.equalsIgnoreCase(book.getAuthor()) || 
+					(author.equalsIgnoreCase(book.getAuthor()) && 
+				bookTitle.equalsIgnoreCase(book.getBookTitle()));
+		} else {
+			return bookTitle.equalsIgnoreCase(((Book)obj).getBookTitle());
 		}
-		return author.equals(((Book)obj).getAuthor()) 
-				&& bookTitle.equalsIgnoreCase(((Book)obj).getBookTitle());
 	}
 	
 	

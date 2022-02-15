@@ -5,6 +5,7 @@ import static com.core.utils.CommonUtils.getSimpleDatFormatter;
 import java.util.Collection;
 import java.util.HashMap;
 import com.core.pojo.Book;
+import com.core.utils.CommonUtils;
 
 /**
  * @author Shahrukh
@@ -24,8 +25,10 @@ public class DisplayBookTester {
 		System.out.println("==================================================================================================");
 	}
 	
-	public static boolean searchBookOnTitle(String bookTitle, HashMap<String, Book> bookMap) throws Exception {
+	public static boolean searchBookOnTitle(HashMap<String, Book> bookMap) throws Exception {
 		
+		System.out.println("Enter book title to search: ");
+		String bookTitle = CommonUtils.getScanner().nextLine();
 		if(bookMap.containsKey(bookTitle)) {
 			Book searchedBook = bookMap.get(bookTitle);
 			System.out.printf("%-25s %-22s %-17s %-15s %-15s%n", "Title", "Author", "Genre/Category", "Publish Date", "Price(Rs)");

@@ -8,18 +8,17 @@ import com.core.pojo.Book;
  * @author Shahrukh
  * @Since 06-Feb-2022
  */
-public class CollctionOperations {
+public class CollectionOperations {
 	
 	/**
 	 * @param bookTitle, bookMap, existingCart
 	 * @return boolean
 	 */
-	public static boolean addElementToCart(String bookTitle, HashMap<String, Book> bookMap, 
-			ArrayList<Book> existingCart) {
+	public static boolean addElementToCart(String bookTitle, HashMap<String, Book> bookMap, ArrayList<Book> existingCart) {
 		
 		if(bookMap.containsKey(bookTitle)) {
-			Book bookTobeAdded = bookMap.get(bookTitle); 
-			existingCart.add(bookTobeAdded);
+			Book bookToBeAdded = bookMap.get(bookTitle); 
+			existingCart.add(bookToBeAdded);
 			return true;
 		}
 		return false;

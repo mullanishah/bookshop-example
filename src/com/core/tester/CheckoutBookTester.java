@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.core.tester;
 
 /**
@@ -9,4 +6,11 @@ package com.core.tester;
  */
 public class CheckoutBookTester {
 
+	public static void checkoutBooksFromCart() {
+		
+	}
+	
+	public static void restoreBooksInCart() {
+		
+	}
 }

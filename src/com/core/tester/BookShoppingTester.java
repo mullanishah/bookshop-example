@@ -45,10 +45,15 @@ public class BookShoppingTester {
 					DisplayBookTester.displayAvailableBooks(availableBooksMap);
 					break;
 				case 2:
+					scanner.nextLine();
+					CartOperationsTester.addBooksToCart(availableBooksMap, bookCart);
 					break;
 				case 3:
+					scanner.nextLine();
+					CartOperationsTester.removeBooksFromCart(availableBooksMap, bookCart);
 					break;
 				case 4:
+					CartOperationsTester.displayBooksInCart(bookCart);
 					break;
 				case 5:
 					break;
@@ -58,8 +63,7 @@ public class BookShoppingTester {
 					break;
 				case 8:
 					scanner.nextLine();
-					System.out.println("Enter book title to search: ");
-					DisplayBookTester.searchBookOnTitle(scanner.nextLine(), availableBooksMap);
+					DisplayBookTester.searchBookOnTitle(availableBooksMap);
 					break;
 				case 9:
 					exit();
