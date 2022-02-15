@@ -56,10 +56,13 @@ public class BookShoppingTester {
 					CartOperationsTester.displayBooksInCart(bookCart);
 					break;
 				case 5:
+					CheckoutBookTester.checkoutBooksFromCart(bookCart);
 					break;
 				case 6:
+					CheckoutBookTester.saveLaterBooksInCart(bookCart);
 					break;
 				case 7:
+					SortBookTester.sortBooksOnPrice(availableBooksMap);
 					break;
 				case 8:
 					scanner.nextLine();

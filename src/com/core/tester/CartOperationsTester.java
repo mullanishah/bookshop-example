@@ -45,7 +45,7 @@ public class CartOperationsTester {
 		if(bookCart == null) {
 			System.err.println("No item found in the cart !!");
 		} else {
-			System.out.printf("%-24s %-22s %-14s | %-12s%n", "Title", "Author", "Genre", "Price(Rs)");
+			System.out.printf("%-22s %-22s %-14s | %-12s%n", "Title", "Author", "Genre", "Price(Rs)");
 			System.out.println("====================================================================================");	
 			for(Book selectedBook : bookCart) {
 				System.out.printf("%-22s %-22s %-14s | %-12s%n", selectedBook.getBookTitle(), selectedBook.getAuthor(), getEnrichedGenre(selectedBook.getGenre()), 
