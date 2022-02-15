@@ -90,7 +90,7 @@ public class Book implements Serializable {
 		
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((author == null) ? 0 : author.hashCode());
+		//result = prime * result + ((author == null) ? 0 : author.hashCode());
 		result = prime * result + ((bookTitle == null) ? 0 : bookTitle.hashCode());
 		return result;
 	}

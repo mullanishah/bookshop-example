@@ -21,7 +21,7 @@ public class BookShoppingTester {
 		boolean flag = false;
 		int choice = 0;
 		
-		HashMap<String, Book> bookMap = DataFeedUtils.getPopulatedData();
+		HashMap<String, Book> availableBooksMap = DataFeedUtils.getPopulatedData();
 		Scanner scanner = getScanner();
 		ArrayList<Book> bookCart = null;
 		try {
@@ -42,6 +42,7 @@ public class BookShoppingTester {
 				choice = scanner.nextInt();
 				switch (choice) {
 				case 1:
+					DisplayBookTester.displayAvailableBooks(availableBooksMap);
 					break;
 				case 2:
 					break;
@@ -56,8 +57,9 @@ public class BookShoppingTester {
 				case 7:
 					break;
 				case 8:
+					scanner.nextLine();
 					System.out.println("Enter book title to search: ");
-					DisplayBookTester.searchBookOnTitle(scanner.next(), bookMap);
+					DisplayBookTester.searchBookOnTitle(scanner.nextLine(), availableBooksMap);
 					break;
 				case 9:
 					exit();
@@ -66,6 +68,7 @@ public class BookShoppingTester {
 					throw new IllegalArgumentException("Unexpected choice selection: " + choice);
 				}
 			}catch (Exception e) {
+				flag = true;
 				e.printStackTrace();
 			}
 		}
