@@ -1,13 +1,8 @@
 package com.core.tester;
 
 import static com.core.utils.CommonUtils.getEnrichedGenre;
-import static com.core.utils.CommonUtils.getSimpleDatFormatter;
-
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
-import java.util.Optional;
-
 import com.core.operations.CollectionOperations;
 import com.core.pojo.Book;
 import com.core.utils.CommonUtils;

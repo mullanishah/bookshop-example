@@ -1,15 +1,12 @@
 package com.core.tester;
 
 import static com.core.utils.CommonUtils.getEnrichedGenre;
-
 import java.io.IOException;
 import java.util.ArrayList;
-
 import com.core.operations.CollectionOperations;
 import com.core.operations.IOOperations;
 import com.core.pojo.Book;
 import com.core.utils.CommonUtils;
-import com.core.utils.DataFeedUtils;
 
 /**
  * @author Shahrukh

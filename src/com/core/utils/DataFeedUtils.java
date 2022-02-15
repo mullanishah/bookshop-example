@@ -1,6 +1,6 @@
 package com.core.utils;
 
-import static com.core.utils.CommonUtils.getSimpleDatFormatter;
+import static com.core.utils.CommonUtils.*;
 import java.util.HashMap;
 import java.util.Optional;
 import com.core.pojo.Book;

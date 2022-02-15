@@ -1,7 +1,6 @@
 package com.core.tester;
 
 import static com.core.utils.CommonUtils.getScanner;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
